@@ -21,21 +21,21 @@ describe('TreeWalker', function() {
     };
 
     describe('#instance', function() {
-        var manager = new TreeWalker( createOptions() ),
+        var walker = new TreeWalker( createOptions() ),
             methods = [
                 'walk'
             ];
 
         it('should create an instance of TreeWalker', function() {
-            should.exist( manager );
-            manager.should.be.instanceof( TreeWalker );
+            should.exist( walker );
+            walker.should.be.instanceof( TreeWalker );
 
         });
 
         it('should have all expected methods by size and type', function() {
-            dash.methods( manager ).length.should.equal( methods.length );
+            dash.methods( walker ).length.should.equal( methods.length );
             methods.forEach(function(method) {
-                manager[ method ].should.be.a( 'function' );
+                walker[ method ].should.be.a( 'function' );
             });
         });
     });
