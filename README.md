@@ -1,7 +1,7 @@
 # Node File Utils
 - - -
 
-A simple set of file utility classes.
+A simple set of file utility and mock classes.
 
 
 ## Installation
@@ -12,6 +12,19 @@ A simple set of file utility classes.
 ## How to use
 
 ### FileCopier
+
+	var FileCopier = require('node-file-utils').FileCopier,
+		log = require('simple-node-logger').createSimipleLogger('FileCopier'),
+		copier = new FileCopier( { log:log } );
+		
+	copier.copy('mysource', 'mydestination', function(err) {
+		if (err) {
+			log.error( err );
+			throw err;
+		}
+		
+		log.info('file copied...');
+	});
 
 ### File Tree Walker
 
