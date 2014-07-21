@@ -67,7 +67,7 @@ There is also a file watcher that can be invoked with this:
 
 Mocks used for testing include MockFileSystem.  Typically you would use MockFileSystem for unit tests like this:
 
-    var MockFileSystem = require('node-file-utils').MockFileSystem;
+    var MockFileSystem = require('node-file-utils').mocks.MockFileSystem;
 
     var fs = new MockFileSystem();
 
@@ -78,4 +78,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.12</em></small></p>
+<p><small><em>version 0.90.13</em></small></p>
