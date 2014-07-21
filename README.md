@@ -28,7 +28,7 @@ A simple set of file utility and mock classes.
 
 ### File Tree Walker
 
-	var TreeWalker = require('../lib/TreeWalker'),
+	var TreeWalker = require('node-file-utils').TreeWalker,
     	log = require('simple-node-logger').createSimpleLogger(),
     	walker = new TreeWalker({ log:log }),
     	callback;
@@ -78,4 +78,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.13</em></small></p>
+<p><small><em>version 0.90.14</em></small></p>
