@@ -1,6 +1,6 @@
 {
   "name": "node-file-utils",
-  "version": "0.90.14",
+  "version": "0.90.15",
   "description": "A simple node console and file logger suitable for command line projects...",
   "main": "index.js",
   "repository": {

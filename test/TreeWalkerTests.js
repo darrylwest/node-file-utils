@@ -24,7 +24,8 @@ describe('TreeWalker', function() {
         var walker = new TreeWalker( createOptions() ),
             methods = [
                 'walk',
-                'find'
+                'find',
+                'findOlder'
             ];
 
         it('should create an instance of TreeWalker', function() {
@@ -38,6 +39,24 @@ describe('TreeWalker', function() {
             methods.forEach(function(method) {
                 walker[ method ].should.be.a( 'function' );
             });
+        });
+    });
+
+    describe('walk', function() {
+        var walker = new TreeWalker( createOptions() ),
+            knownFolder = __dirname + '/fixtures';
+
+        it('should walk a known path and return a list of all files', function(done) {
+            var callback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                files.length.should.equal( 5 );
+
+                done();
+            };
+
+            walker.walk( knownFolder, callback );
         });
     });
 });
