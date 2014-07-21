@@ -59,4 +59,54 @@ describe('TreeWalker', function() {
             walker.walk( knownFolder, callback );
         });
     });
+
+    describe('find', function() {
+        var walker = new TreeWalker( createOptions() ),
+            knownFolder = __dirname + '/fixtures',
+            pattern = /.js$/;
+
+        it('should find a list of known files in a known folder', function(done) {
+            var callback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                files.length.should.equal( 2 );
+
+                done();
+            };
+
+            walker.find( knownFolder, pattern, callback );
+        });
+    });
+
+    describe('findOlder', function() {
+        var walker = new TreeWalker( createOptions() ),
+            knownFolder = __dirname + '/fixtures';
+
+        it('should find a list of files older than now in a known folder', function(done) {
+            var callback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                files.length.should.equal( 5 );
+
+                done();
+            };
+
+            walker.findOlder( knownFolder, new Date(), callback );
+        });
+
+        it('should find no files older than a date in the distant past', function(done) {
+            var callback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                files.length.should.equal( 0 );
+
+                done();
+            };
+
+            walker.findOlder( knownFolder, new Date('1999-01-01'), callback );
+        });
+    });
 });
