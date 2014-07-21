@@ -28,7 +28,23 @@ A simple set of file utility and mock classes.
 
 ### File Tree Walker
 
+	var TreeWalker = require('../lib/TreeWalker'),
+    	log = require('simple-node-logger').createSimpleLogger(),
+    	walker = new TreeWalker({ log:log }); 
+
+	walker.walk( 'myfolder', function(err, files) {
+    	if (err) throw err;
+
+    	files.forEach(function(file) {
+        	log.info( file );
+    	}); 
+
+    	log.info( 'file list length: ', files.length );
+	});
+
 ## Examples
+
+Examples of file copier and tree walker can be found in the examples folder.
 
 ## Unit Tests
 
@@ -55,4 +71,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.10</em></small></p>
+<p><small><em>version 0.90.11</em></small></p>
