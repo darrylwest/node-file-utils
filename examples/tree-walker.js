@@ -4,6 +4,14 @@ var TreeWalker = require('../lib/TreeWalker'),
     log = require('simple-node-logger').createSimpleLogger(),
     walker = new TreeWalker({ log:log });
 
+walker.onDirectory(function(path) {
+    log.info('new directory found: ', path);
+});
+
+walker.onFile(function(file) {
+    log.info('new file found: ', file);
+});
+
 walker.walk( __dirname + '/../test', function(err, files) {
     if (err) throw err;
 

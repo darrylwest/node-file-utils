@@ -25,7 +25,18 @@ describe('TreeWalker', function() {
             methods = [
                 'walk',
                 'find',
-                'findOlder'
+                'findOlder',
+                'onDirectory',
+                'onFile',
+                // inherited
+                'addListener',
+                'emit',
+                'listeners',
+                'on',
+                'once',
+                'removeAllListeners',
+                'removeListener',
+                'setMaxListeners'
             ];
 
         it('should create an instance of TreeWalker', function() {
@@ -107,6 +118,63 @@ describe('TreeWalker', function() {
             };
 
             walker.findOlder( knownFolder, new Date('1999-01-01'), callback );
+        });
+    });
+
+    describe('onDirectory', function() {
+        var walker = new TreeWalker( createOptions() ),
+            knownFolder = __dirname + '/fixtures';
+
+        it('should fire an event when a new directory is located', function(done) {
+            var dirHandler,
+                completeCallback,
+                dirs = [];
+
+            dirHandler = function(path) {
+                dirs.push( path );
+            };
+
+            completeCallback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                // even with all the files skipped, there should be 4 folders...
+                files.length.should.equal( 0 );
+                dirs.length.should.equal( 4 );
+
+                done();
+            };
+
+            walker.onDirectory( dirHandler );
+            walker.findOlder( knownFolder, new Date('1999-01-01'), completeCallback );
+        });
+    });
+
+    describe('onFile', function() {
+        var walker = new TreeWalker( createOptions() ),
+            knownFolder = __dirname + '/fixtures',
+            pattern = /.js$/;
+
+        it('should fire an event when a new file is located', function(done) {
+            var fileHandler,
+                completeCallback,
+                fileList = [];
+
+            fileHandler = function(file) {
+                fileList.push( file );
+            };
+
+            completeCallback = function(err, files) {
+                should.not.exist( err );
+                should.exist( files );
+
+                fileList.length.should.equal( files.length );
+
+                done();
+            };
+
+            walker.onFile( fileHandler );
+            walker.find( knownFolder, pattern, completeCallback );
         });
     });
 });

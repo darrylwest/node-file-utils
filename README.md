@@ -56,9 +56,30 @@ TreeWalker's walk method traverses a file system from a specified start point an
 	// find and return just the javascript files
 	walker.find( 'myfolder', /.js$/, callback );
 	
-## Events
+### Tree Walker Events
 
-_Events will be implemented soon.  They include events that fire on complete and progress levels._
+Events are triggered by TreeWalker when a new folder or file is located.  Files that are skipped based on age or pattern don't trigger events.  All new folders trigger events.
+
+
+#### onDirectory
+
+When a new directory is located a 'onDirectory' event is fired.  The event handler receives the director's path.
+
+	var directoryHandler = function(path) {
+		log.info( 'new folder: ', path );
+	};
+	
+	walker.onDirectory( directoryHandler );
+
+#### onFile
+
+When a new file is added to the list a 'onFile' event is fired with the file's full path.
+
+	var fileHandler = function(path) {
+		log.info( 'new file: ', path );
+	};
+	
+	walker.onFile( fileHandler );
 
 ## Examples
 
@@ -93,4 +114,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.15</em></small></p>
+<p><small><em>version 0.90.16</em></small></p>
