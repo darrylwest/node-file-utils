@@ -23,7 +23,8 @@ describe('TreeWalker', function() {
     describe('#instance', function() {
         var walker = new TreeWalker( createOptions() ),
             methods = [
-                'walk'
+                'walk',
+                'find'
             ];
 
         it('should create an instance of TreeWalker', function() {

@@ -30,9 +30,10 @@ A simple set of file utility and mock classes.
 
 	var TreeWalker = require('../lib/TreeWalker'),
     	log = require('simple-node-logger').createSimpleLogger(),
-    	walker = new TreeWalker({ log:log }); 
-
-	walker.walk( 'myfolder', function(err, files) {
+    	walker = new TreeWalker({ log:log }),
+    	callback;
+    	
+    callback = function(err, files) {
     	if (err) throw err;
 
     	files.forEach(function(file) {
@@ -40,7 +41,13 @@ A simple set of file utility and mock classes.
     	}); 
 
     	log.info( 'file list length: ', files.length );
-	});
+    };
+
+	// return all the files
+	walker.walk( 'myfolder', callback );
+	
+	// find and return just the javascript files
+	walker.find( 'myfolder', /.js$/, callback );
 
 ## Examples
 
@@ -71,4 +78,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.11</em></small></p>
+<p><small><em>version 0.90.12</em></small></p>
