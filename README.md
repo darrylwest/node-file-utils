@@ -30,6 +30,16 @@ _Note: modules use standard production level logging and must be constructed wit
 		
 		log.info('file copied...');
 	});
+	
+### File Copy Events
+
+File copy has a progress event that fires when data arrives in chunks.  A simple progress percentage is fired for this event.
+
+	var progressHandler = function(percent) {
+		log.info('percent complete: ', percent, '%');
+	};
+	
+	copier.onProgress( progressHandler );
 
 ### File Tree Walker
 
