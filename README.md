@@ -93,7 +93,13 @@ When a new file is added to the list a 'onFile' event is fired with the file's f
 
 ## Examples
 
-Examples of file copier and tree walker can be found in the examples folder.
+Examples of file copier and tree walker can be found in the examples folder. The javascript scripts can be run like this:
+
+	node examples/file-copy.js
+	
+	// and
+	
+	node examples/tree-walker.js
 
 ## Unit Tests
 
