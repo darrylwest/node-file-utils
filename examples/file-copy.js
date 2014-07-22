@@ -9,6 +9,10 @@ var FileCopier = require('../lib/FileCopier'),
 log.info('copy file...');
 log.setLevel('debug');
 
+copier.onProgress(function(percent) {
+    log.info('complete: ', percent, '%');
+});
+
 copier.copy( src, dest, function(err) {
     if (err) throw err;
 
