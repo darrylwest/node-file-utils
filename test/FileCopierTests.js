@@ -26,6 +26,7 @@ describe('TreeWalker', function() {
         var copier = new FileCopier( createOptions() ),
             methods = [
                 'copy',
+                'onProgress',
                 // inherited
                 'addListener',
                 'emit',
