@@ -3,8 +3,8 @@
 var FileCopier = require('../lib/FileCopier'),
     log = require('simple-node-logger').createSimpleLogger(),
     copier = new FileCopier( { log:log } ),
-    src = __dirname + '/test-file.txt',
-    dest = __dirname + '/copied-file.txt';
+    src = __dirname + '/big-file.txt',
+    dest = __dirname + '/copied-file.log';
 
 log.info('copy file...');
 

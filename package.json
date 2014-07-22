@@ -1,6 +1,6 @@
 {
   "name": "node-file-utils",
-  "version": "0.90.16",
+  "version": "0.90.17",
   "description": "A simple node console and file logger suitable for command line projects...",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,8 @@
     "tree-walker",
     "directory-walker",
     "stream-copier",
+    "archive",
+    "purge",
     "archiver"
   ],
   "dependencies": {

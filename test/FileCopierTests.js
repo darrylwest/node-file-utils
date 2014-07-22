@@ -31,7 +31,6 @@ describe('TreeWalker', function() {
         it('should create an instance of FileCopier', function() {
             should.exist( copier );
             copier.should.be.instanceof( FileCopier );
-
         });
 
         it('should have all expected methods by size and type', function() {
