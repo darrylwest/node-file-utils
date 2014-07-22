@@ -25,7 +25,16 @@ describe('TreeWalker', function() {
     describe('#instance', function() {
         var copier = new FileCopier( createOptions() ),
             methods = [
-                'copy'
+                'copy',
+                // inherited
+                'addListener',
+                'emit',
+                'listeners',
+                'on',
+                'once',
+                'removeAllListeners',
+                'removeListener',
+                'setMaxListeners'
             ];
 
         it('should create an instance of FileCopier', function() {

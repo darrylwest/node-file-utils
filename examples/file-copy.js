@@ -7,6 +7,7 @@ var FileCopier = require('../lib/FileCopier'),
     dest = __dirname + '/copied-file.log';
 
 log.info('copy file...');
+log.setLevel('debug');
 
 copier.copy( src, dest, function(err) {
     if (err) throw err;
