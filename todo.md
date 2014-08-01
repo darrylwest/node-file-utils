@@ -3,8 +3,8 @@ File Utils To Do List
 
 # General 
 
+* create TreeStreamReader and FileTransform to enable piping and processing huge trees
 * create Archiver class to enable archiver.archive( path, pattern, age, destination )
-* create compressor method to enable archiver.compress( path, pattern, age, zipfile )
 * add purger method to Archive to enable archiver.purge( path, pattern, age )
 * create DiskStats class to enable dstat.free( path ), dstat.usage( path )
 
