@@ -6,7 +6,7 @@
 var TreeWalker = require('../lib/TreeWalker'),
     log = require('simple-node-logger').createSimpleLogger(),
     walker = new TreeWalker({ log:log }),
-    hugeFolder = '/Volumes/dpw-2012/gimp';
+    hugeFolder = 'YOUR-HUGE-FILE-SYSTEM';
 
 walker.onFile(function(file) {
     log.info( file );
