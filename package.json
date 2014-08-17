@@ -1,11 +1,14 @@
 {
   "name": "node-file-utils",
-  "version": "0.90.21",
+  "version": "0.90.22",
   "description": "A simple node console and file logger suitable for command line projects...",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/darrylwest/simple-node-logger.git"
+  },
+  "scripts":{
+    "test":"grunt test"
   },
   "keywords": [
     "file",

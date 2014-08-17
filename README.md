@@ -1,6 +1,8 @@
 # Node File Utils
 - - -
 
+[![NPM version](https://badge.fury.io/js/node-file-utils.svg)](http://badge.fury.io/js/node-file-utils)
+
 A simple set of file utility and mock classes.  Modules are a stand-alone class-like objects constructed with injected variable options.  The intent is to provide small specific helpers to solve typical linux/unix file system problems.
 
 _Requires node streams2, i.e., 0.10.x_
@@ -130,4 +132,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>version 0.90.21 | copyright © rain city software </em></small></p>
+<p><small><em>version 0.90.22 | copyright © rain city software </em></small></p>
