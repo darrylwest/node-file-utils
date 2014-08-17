@@ -2,6 +2,7 @@
 - - -
 
 [![NPM version](https://badge.fury.io/js/node-file-utils.svg)](http://badge.fury.io/js/node-file-utils)
+[![Build Status](https://travis-ci.org/darrylwest/node-file-utils.svg?branch=develop)](https://travis-ci.org/darrylwest/node-file-utils)
 
 A simple set of file utility and mock classes.  Modules are a stand-alone class-like objects constructed with injected variable options.  The intent is to provide small specific helpers to solve typical linux/unix file system problems.
 
