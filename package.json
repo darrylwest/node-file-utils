@@ -1,6 +1,6 @@
 {
   "name": "node-file-utils",
-  "version": "0.90.23",
+  "version": "0.90.24",
   "description": "A simple node console and file logger suitable for command line projects...",
   "main": "index.js",
   "repository": {
@@ -24,7 +24,8 @@
     "lodash": "^2.4.1",
     "moment": "^2.7.0",
     "path": "^0.4.9",
-    "util": "^0.10.3"
+    "util": "^0.10.3",
+    "simple-node-logger": "^0.92.11"
   },
   "devDependencies": {
     "casual": "^1.4.6",
@@ -42,7 +43,6 @@
     "jshint-stylish": "~0.1.3",
     "load-grunt-tasks": "~0.1.0",
     "mocha": "~1.16.2",
-    "simple-node-logger": "^0.92.11",
     "time-grunt": "~0.1.1"
   },
   "author": "darryl.west@raincitysoftware.com",

@@ -1,21 +1,19 @@
 #!/usr/bin/env node
 
 var FileCopier = require('../lib/FileCopier'),
-    log = require('simple-node-logger').createSimpleLogger(),
-    copier = new FileCopier( { log:log } ),
+    copier = FileCopier.createInstance(),
     src = __dirname + '/big-file.txt',
     dest = __dirname + '/copied-file.log';
 
-log.info('copy file...');
-log.setLevel('debug');
+console.log('copy file...');
 
 copier.onProgress(function(percent) {
-    log.info('complete: ', percent, '%');
+    console.log('complete: ', percent, '%');
 });
 
 copier.copy( src, dest, function(err) {
     if (err) throw err;
 
-    log.info('file ', src, ' copied to ', dest);
+    console.log('file ', src, ' copied to ', dest);
 });
 
