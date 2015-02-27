@@ -8,7 +8,10 @@ var FileArchiver = require('../index').FileArchiver,
     config = require('./purge-spec').readConfig(),
     archiver = FileArchiver.createInstance();
 
-console.log( config );
+// console.log( config );
 
-archiver.purge( config );
+archiver.purge( config, function(err, files) {
+    console.log( 'errors: ', err );
+    console.log( 'number of files purged: ', files.length );
+});
 
