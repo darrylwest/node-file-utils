@@ -13,7 +13,6 @@ _Requires node streams2, i.e., 0.10.x_
 
     npm install node-file-utils --save
 
-
 ## How to use
 
 The examples folder contains a few use cases that demonstrate how to define, instantiate and use the available utilities.  The examples below also show use.
@@ -94,6 +93,29 @@ When a new file is added to the list a 'onFile' event is fired with the file's f
 	};
 	
 	walker.onFile( fileHandler );
+	
+
+### FileArchiver
+
+A simple example of a file purge based on files older than 30 days.
+
+	var FileArchiver = require('node-file-utils'). FileArchiver,
+    	archiver = FileArchiver.createInstance(),
+    	config = {
+    		folders:[ 'logs/' ],
+    		cwd: process.env.HOME,
+    		olderThanDays: 30
+    	};
+    	
+   archiver.onProgress(function(err, file) {
+   		console.log('file removed: ', file);
+   });
+   
+   archiver.onComplete(function() {
+   		console.log('archive/purge complete...');
+   });
+   
+   archiver.purge( config );
 
 ## Examples
 
@@ -104,6 +126,10 @@ Examples of file copier and tree walker can be found in the examples folder. The
 	// and
 	
 	node examples/tree-walker.js
+	
+	// or
+	
+	node examples/purge-files.js
 
 ## Unit Tests
 
@@ -114,6 +140,10 @@ All unit tests are written in mocha/chai/should and can be run from the command 
 	// or
 	
 	make jshint
+	
+	// or
+	
+	npm test
 	
 There is also a source file watcher that can be invoked with this:
 
@@ -134,4 +164,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>copyright 2014-2015 © rain city software | version 0.90.27</em></small></p>
+<p><small><em>copyright 2014-2015 © rain city software | version 0.90.28</em></small></p>
