@@ -1,31 +1,31 @@
 /**
- * @class FileCopierTests
+ * @class FileArchiverTests
  *
  * @author: darryl.west@raincitysoftware.com
- * @created: 7/20/14 3:32 PM
+ * @created: 2/26/15 3:07 PM
  */
 var should = require('chai').should(),
     dash = require( 'lodash' ),
     MockLogger = require('simple-node-logger' ).mocks.MockLogger,
     MockFileSystem = require('./mocks/MockFileSystem' ),
-    FileCopier = require( '../lib/FileCopier' );
+    FileArchiver = require( '../lib/FileArchiver' );
 
-describe('FileCopier', function() {
+describe('FileArchiver', function() {
     'use strict';
 
     var createOptions = function() {
         var opts = {};
 
-        opts.log = MockLogger.createLogger( 'FileCopier' );
+        opts.log = MockLogger.createLogger( 'FileArchiver' );
         opts.fs = new MockFileSystem();
 
         return opts;
     };
 
     describe('#instance', function() {
-        var copier = new FileCopier( createOptions() ),
+        var archiver = new FileArchiver( createOptions() ),
             methods = [
-                'copy',
+                'purge',
                 'onProgress',
                 // inherited
                 'addListener',
@@ -38,16 +38,18 @@ describe('FileCopier', function() {
                 'setMaxListeners'
             ];
 
-        it('should create an instance of FileCopier', function() {
-            should.exist( copier );
-            copier.should.be.instanceof( FileCopier );
+        it('should create an instance of FileArchiver', function() {
+            should.exist( archiver );
+            archiver.should.be.instanceof( FileArchiver );
         });
 
         it('should have all expected methods by size and type', function() {
-            dash.methods( copier ).length.should.equal( methods.length );
+            dash.methods( archiver ).length.should.equal( methods.length );
             methods.forEach(function(method) {
-                copier[ method ].should.be.a( 'function' );
+                archiver[ method ].should.be.a( 'function' );
             });
         });
     });
+
+
 });
