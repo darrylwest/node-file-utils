@@ -27,6 +27,7 @@ describe('FileArchiver', function() {
             methods = [
                 'purge',
                 'onProgress',
+                'onComplete',
                 // inherited
                 'addListener',
                 'emit',

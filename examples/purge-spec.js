@@ -6,7 +6,7 @@ module.exports.readConfig = function() {
     var config = {
         folders:[ 'logs/' ],
         cwd: process.env.HOME,
-        daysOlderThan: 7,
+        olderThanDays: 3,
         actions:[ 'unlink' ] // 'unlink', { mv:[ 'target/' ] }, { archive:'backup-<date>.tgz' }
     };
 
