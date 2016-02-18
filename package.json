@@ -1,6 +1,6 @@
 {
   "name": "node-file-utils",
-  "version": "0.91.10",
+  "version": "0.91.11",
   "description": "A simple set of file utilities suitable for command line projects...",
   "main": "index.js",
   "repository": {

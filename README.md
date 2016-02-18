@@ -7,8 +7,6 @@
 
 A simple set of file utility and mock classes.  Modules are a stand-alone class-like objects constructed with injected variable options.  The intent is to provide small specific helpers to solve typical linux/unix file system problems.
 
-_Requires node streams2, i.e., 0.10.x_
-
 ## Installation
 
     npm install node-file-utils --save
@@ -164,4 +162,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>copyright 2014-2016 © rain city software | version 0.91.10</em></small></p>
+<p><small><em>copyright 2014-2016 © rain city software | version 0.91.11</em></small></p>
