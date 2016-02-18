@@ -26,16 +26,7 @@ describe('FileCopier', function() {
         var copier = new FileCopier( createOptions() ),
             methods = [
                 'copy',
-                'onProgress',
-                // inherited
-                'addListener',
-                'emit',
-                'listeners',
-                'on',
-                'once',
-                'removeAllListeners',
-                'removeListener',
-                'setMaxListeners'
+                'onProgress'
             ];
 
         it('should create an instance of FileCopier', function() {
@@ -44,7 +35,7 @@ describe('FileCopier', function() {
         });
 
         it('should have all expected methods by size and type', function() {
-            dash.methods( copier ).length.should.equal( methods.length );
+            dash.functions( copier ).length.should.equal( methods.length );
             methods.forEach(function(method) {
                 copier[ method ].should.be.a( 'function' );
             });

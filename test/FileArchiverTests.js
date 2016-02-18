@@ -28,16 +28,7 @@ describe('FileArchiver', function() {
                 'purge',
                 'onProgress',
                 'onComplete',
-                'onError',
-                // inherited
-                'addListener',
-                'emit',
-                'listeners',
-                'on',
-                'once',
-                'removeAllListeners',
-                'removeListener',
-                'setMaxListeners'
+                'onError'
             ];
 
         it('should create an instance of FileArchiver', function() {
@@ -46,7 +37,7 @@ describe('FileArchiver', function() {
         });
 
         it('should have all expected methods by size and type', function() {
-            dash.methods( archiver ).length.should.equal( methods.length );
+            dash.functions( archiver ).length.should.equal( methods.length );
             methods.forEach(function(method) {
                 archiver[ method ].should.be.a( 'function' );
             });

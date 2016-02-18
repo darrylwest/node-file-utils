@@ -1,6 +1,6 @@
 {
   "name": "node-file-utils",
-  "version": "0.90.30",
+  "version": "0.91.10",
   "description": "A simple set of file utilities suitable for command line projects...",
   "main": "index.js",
   "repository": {
@@ -21,11 +21,11 @@
     "archiver"
   ],
   "dependencies": {
-    "lodash": "^3.6.0",
-    "moment": "^2.9.0",
-    "path": "^0.11.14",
+    "lodash": "^4.5.0",
+    "moment": "^2.11.2",
+    "path": "^0.12.7",
     "util": "^0.10.3",
-    "simple-node-logger": "^0.92.17"
+    "simple-node-logger": "^0.93.11"
   },
   "devDependencies": {
     "casual": "^1.4.6",

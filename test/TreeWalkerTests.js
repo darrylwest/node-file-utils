@@ -27,16 +27,7 @@ describe('TreeWalker', function() {
                 'find',
                 'findOlder',
                 'onDirectory',
-                'onFile',
-                // inherited
-                'addListener',
-                'emit',
-                'listeners',
-                'on',
-                'once',
-                'removeAllListeners',
-                'removeListener',
-                'setMaxListeners'
+                'onFile'
             ];
 
         it('should create an instance of TreeWalker', function() {
@@ -46,7 +37,7 @@ describe('TreeWalker', function() {
         });
 
         it('should have all expected methods by size and type', function() {
-            dash.methods( walker ).length.should.equal( methods.length );
+            dash.functions( walker ).length.should.equal( methods.length );
             methods.forEach(function(method) {
                 walker[ method ].should.be.a( 'function' );
             });
