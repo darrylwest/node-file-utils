@@ -4,7 +4,7 @@
  * @author: darryl.west@raincitysoftware.com
  * @created: 7/20/14 3:32 PM
  */
-var should = require('chai').should(),
+const should = require('chai').should(),
     dash = require( 'lodash' ),
     MockLogger = require('simple-node-logger' ).mocks.MockLogger,
     MockFileSystem = require('./mocks/MockFileSystem' ),
@@ -13,7 +13,7 @@ var should = require('chai').should(),
 describe('FileCopier', function() {
     'use strict';
 
-    var createOptions = function() {
+    const createOptions = function() {
         var opts = {};
 
         opts.log = MockLogger.createLogger( 'FileCopier' );

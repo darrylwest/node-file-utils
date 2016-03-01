@@ -4,7 +4,7 @@
  * @author: darryl.west@raincitysoftware.com
  * @created: 7/20/14 3:21 PM
  */
-var should = require('chai').should(),
+const should = require('chai').should(),
     dash = require( 'lodash' ),
     MockLogger = require('simple-node-logger' ).mocks.MockLogger,
     TreeWalker = require( '../lib/TreeWalker' );
@@ -12,7 +12,7 @@ var should = require('chai').should(),
 describe('TreeWalker', function() {
     'use strict';
 
-    var createOptions = function() {
+    const createOptions = function() {
         var opts = {};
 
         opts.log = MockLogger.createLogger( 'FileWalker' );
@@ -21,7 +21,7 @@ describe('TreeWalker', function() {
     };
 
     describe('#instance', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             methods = [
                 'walk',
                 'find',
@@ -45,11 +45,11 @@ describe('TreeWalker', function() {
     });
 
     describe('walk', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             knownFolder = __dirname + '/fixtures';
 
         it('should walk a known path and return a list of all files', function(done) {
-            var callback = function(err, files) {
+            const callback = function(err, files) {
                 should.not.exist( err );
                 should.exist( files );
 
@@ -63,12 +63,12 @@ describe('TreeWalker', function() {
     });
 
     describe('find', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             knownFolder = __dirname + '/fixtures',
             pattern = /.js$/;
 
         it('should find a list of known files in a known folder', function(done) {
-            var callback = function(err, files) {
+            const callback = function(err, files) {
                 should.not.exist( err );
                 should.exist( files );
 
@@ -82,11 +82,11 @@ describe('TreeWalker', function() {
     });
 
     describe('findOlder', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             knownFolder = __dirname + '/fixtures';
 
         it('should find a list of files older than now in a known folder', function(done) {
-            var callback = function(err, files) {
+            const callback = function(err, files) {
                 should.not.exist( err );
                 should.exist( files );
 
@@ -99,7 +99,7 @@ describe('TreeWalker', function() {
         });
 
         it('should find no files older than a date in the distant past', function(done) {
-            var callback = function(err, files) {
+            const callback = function(err, files) {
                 should.not.exist( err );
                 should.exist( files );
 
@@ -113,11 +113,11 @@ describe('TreeWalker', function() {
     });
 
     describe('onDirectory', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             knownFolder = __dirname + '/fixtures';
 
         it('should fire an event when a new directory is located', function(done) {
-            var dirHandler,
+            let dirHandler,
                 completeCallback,
                 dirs = [];
 
@@ -142,20 +142,18 @@ describe('TreeWalker', function() {
     });
 
     describe('onFile', function() {
-        var walker = new TreeWalker( createOptions() ),
+        const walker = new TreeWalker( createOptions() ),
             knownFolder = __dirname + '/fixtures',
             pattern = /.js$/;
 
         it('should fire an event when a new file is located', function(done) {
-            var fileHandler,
-                completeCallback,
-                fileList = [];
+            let fileList = [];
 
-            fileHandler = function(file) {
+            const fileHandler = function(file) {
                 fileList.push( file );
             };
 
-            completeCallback = function(err, files) {
+            const completeCallback = function(err, files) {
                 should.not.exist( err );
                 should.exist( files );
 
