@@ -4,7 +4,7 @@
  * @author: darryl.west@raincitysoftware.com
  * @created: 2/26/15 3:07 PM
  */
-var should = require('chai').should(),
+const should = require('chai').should(),
     dash = require( 'lodash' ),
     MockLogger = require('simple-node-logger' ).mocks.MockLogger,
     MockFileSystem = require('./mocks/MockFileSystem' ),
@@ -13,7 +13,7 @@ var should = require('chai').should(),
 describe('FileArchiver', function() {
     'use strict';
 
-    var createOptions = function() {
+    const createOptions = function() {
         var opts = {};
 
         opts.log = MockLogger.createLogger( 'FileArchiver' );
@@ -23,7 +23,7 @@ describe('FileArchiver', function() {
     };
 
     describe('#instance', function() {
-        var archiver = new FileArchiver( createOptions() ),
+        const archiver = new FileArchiver( createOptions() ),
             methods = [
                 'purge',
                 'onProgress',
