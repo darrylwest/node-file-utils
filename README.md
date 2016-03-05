@@ -170,4 +170,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>copyright 2014-2016 © rain city software | version 0.91.15</em></small></p>
+<p><small><em>copyright 2014-2016 © rain city software | version 0.91.17</em></small></p>
