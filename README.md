@@ -34,6 +34,12 @@ FileCopier copies the original contents and the file's mode from source to desti
 		log.info('file copied...');
 	});
 	
+	// or
+	
+	copier.onComplete(stats => console.log( stats ));
+	
+	copier.copy('mysource', 'myfolder/myNestedFolder/dest');
+	
 ### File Copy Events
 
 File copy has a progress event that fires when data arrives in chunks.  A simple progress percentage is fired for this event.
@@ -164,4 +170,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>copyright 2014-2016 © rain city software | version 0.91.14</em></small></p>
+<p><small><em>copyright 2014-2016 © rain city software | version 0.91.15</em></small></p>

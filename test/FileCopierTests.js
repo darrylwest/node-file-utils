@@ -14,7 +14,7 @@ describe('FileCopier', function() {
     'use strict';
 
     const createOptions = function() {
-        var opts = {};
+        const opts = {};
 
         opts.log = MockLogger.createLogger( 'FileCopier' );
         opts.fs = new MockFileSystem();
@@ -23,10 +23,11 @@ describe('FileCopier', function() {
     };
 
     describe('#instance', function() {
-        var copier = new FileCopier( createOptions() ),
+        const copier = new FileCopier( createOptions() ),
             methods = [
                 'copy',
-                'onProgress'
+                'onProgress',
+                'onComplete'
             ];
 
         it('should create an instance of FileCopier', function() {

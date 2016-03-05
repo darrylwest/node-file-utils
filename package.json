@@ -1,14 +1,14 @@
 {
   "name": "node-file-utils",
-  "version": "0.91.14",
+  "version": "0.91.15",
   "description": "A simple set of file utilities suitable for command line projects...",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/darrylwest/node-file-utils.git"
   },
-  "scripts":{
-    "test":"grunt test"
+  "scripts": {
+    "test": "grunt test"
   },
   "keywords": [
     "file",
@@ -22,13 +22,12 @@
   ],
   "dependencies": {
     "lodash": "^4.5.0",
-    "moment": "^2.11.2",
+    "mkdirp": "^0.5.1",
     "path": "^0.12.7",
-    "util": "^0.10.3",
-    "simple-node-logger": "^0.93.11"
+    "simple-node-logger": "^0.93.11",
+    "util": "^0.10.3"
   },
   "devDependencies": {
-    "casual": "^1.4.6",
     "chai": "~1.8.1",
     "grunt": "~0.4.2",
     "grunt-concurrent": "~0.3.0",
