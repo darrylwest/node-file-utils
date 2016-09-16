@@ -22,7 +22,7 @@ _Note: modules use standard production level logging and must be constructed wit
 FileCopier copies the original contents and the file's mode from source to destination.  The destination path must exist prior to a copy. (_use a mkdirp utility for that_)
 
 	var FileCopier = require('node-file-utils').FileCopier,
-		log = require('simple-node-logger').createSimipleLogger('FileCopier'),
+		log = require('simple-node-logger').createSimpleLogger('FileCopier'),
 		copier = new FileCopier( { log:log } );
 		
 	copier.copy('mysource', 'mydestination', function(err) {
@@ -170,4 +170,4 @@ Mocks used for testing include MockFileSystem.  Typically you would use MockFile
 Apache 2.0
 
 - - -
-<p><small><em>copyright 2014-2016 © rain city software | version 0.91.18</em></small></p>
+<p><small><em>copyright 2014-2016 © rain city software | version 0.91.19</em></small></p>
